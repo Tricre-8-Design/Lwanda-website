@@ -3,14 +3,13 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { StoryCard } from "@/components/ui/story-card"
 import { getSupabase } from "@/lib/supabase/client"
-import { getHeroImage } from "@/lib/hero"
 import { useEffect, useState } from "react"
 
 export default function StoriesPage({ searchParams }: { searchParams?: Record<string, string> }) {
   const page = Number(searchParams?.page || 1)
   const limit = 9
   const [data, setData] = useState<any[]>([])
-  const [heroUrl, setHeroUrl] = useState("/fallback.png") // Default fallback
+  const [heroUrl, setHeroUrl] = useState("/graduation-ceremony-kenya-children.png")
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -30,9 +29,6 @@ export default function StoriesPage({ searchParams }: { searchParams?: Record<st
             setData(res.data || [])
         }
         
-        // Load Hero Image
-        const hUrl = await getHeroImage("stories", "/fallback.png")
-        setHeroUrl(hUrl || "/fallback.png")
         setLoading(false)
     }
     load()

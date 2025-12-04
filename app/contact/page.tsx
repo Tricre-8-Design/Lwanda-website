@@ -106,7 +106,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-sans font-semibold text-foreground mb-1">Email</h3>
                     <a href="mailto:info@ke258lwanda.org" className="font-serif text-muted-foreground hover:text-primary">
-                      info@ke258lwanda.org
+                      ke258fgcklwandacdc@gmail.com
                     </a>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-sans font-semibold text-foreground mb-1">Phone</h3>
                     <a href="tel:+254700000000" className="font-serif text-muted-foreground hover:text-primary">
-                      +254 7XX XXX XXX
+                      +254 723 783 472
                     </a>
                   </div>
                 </div>

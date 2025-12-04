@@ -7,7 +7,6 @@ import { StatCard } from "@/components/ui/stat-card"
 import { StoryCard } from "@/components/ui/story-card"
 import { Heart, Users, GraduationCap, Baby, Calendar, TrendingUp } from "@/components/icons"
 import { getSupabase } from "@/lib/supabase/client"
-import { getHeroImage } from "@/lib/hero"
 
 export default async function HomePage() {
   const supabase = getSupabase()
@@ -23,7 +22,6 @@ export default async function HomePage() {
     data = res.data
   }
 
-  const heroImageUrl = await getHeroImage("home", "/children-playing-in-kenya-community-center.png")
 
   const stories = (data || []).map((s: any) => {
     const imgPath = typeof s.media_path === "string" ? s.media_path : undefined

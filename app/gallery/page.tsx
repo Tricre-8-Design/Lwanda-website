@@ -75,10 +75,14 @@ export default function Gallery() {
       <SiteHeader />
 
       {/* Hero Section for Gallery */}
-      <section className="relative bg-muted py-20 text-center">
-        <div className="container mx-auto px-4">
-            <h1 className="text-4xl font-bold mb-4">Our Gallery</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+      <section className="relative py-20 text-center">
+        <div className="absolute inset-0 -z-10">
+          <img src="/children-performing-at-kenya-community-event.png" alt="Gallery Hero" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+            <h1 className="text-4xl font-bold text-white mb-4">Our Gallery</h1>
+            <p className="text-white/90 max-w-2xl mx-auto">
                 Explore moments captured from our various programs and community activities.
             </p>
         </div>

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -57,14 +57,22 @@ export function HeroSection({
 
             <div className="flex flex-col md:flex-row gap-4 mt-6 justify-center">
               {primaryCta && (
-                <Button asChild className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-6 text-lg shadow-lg hover:scale-105 transition-transform" size="lg">
-                  <Link href={primaryCta.href || "#sponsor"}>{primaryCta.text}</Link>
-                </Button>
+                <Link
+                  href={primaryCta.href || "#sponsor"}
+                  aria-label={primaryCta.text}
+                  className={`${buttonVariants({ variant: "default", size: "lg" })} px-8 py-6 text-lg font-bold rounded-lg shadow-md hover:shadow-lg active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all`}
+                >
+                  {primaryCta.text}
+                </Link>
               )}
               {secondaryCta && (
-                <Button asChild className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/50 font-bold px-8 py-6 text-lg backdrop-blur-sm shadow-lg hover:scale-105 transition-transform" size="lg">
-                  <Link href={secondaryCta.href || "#story"}>{secondaryCta.text}</Link>
-                </Button>
+                <Link
+                  href={secondaryCta.href || "#story"}
+                  aria-label={secondaryCta.text}
+                  className="inline-flex items-center justify-center h-11 px-8 text-lg font-bold rounded-lg bg-white text-foreground shadow-md hover:bg-white/95 hover:shadow-lg active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-all"
+                >
+                  {secondaryCta.text}
+                </Link>
               )}
             </div>
           </div>
